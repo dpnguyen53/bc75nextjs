@@ -1,4 +1,5 @@
 import { fetchDetail } from "@/app/action/services/productApi";
+import Image from "next/image";
 
 export async function generateMetadata({ params }: any) {
   const prodDetail = await fetchDetail(params.id);
@@ -38,7 +39,7 @@ export default async function Detail({ params }: any) {
       <h1>Detail</h1>
       <div className="grid grid-cols-2">
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <img className="rounded-t-lg" src={data.image} alt={data.name} />
+          <Image src={data.image} alt={data.name} width={300} height={300} />
         </div>
         <div>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

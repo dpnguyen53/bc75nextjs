@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 // import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -40,7 +41,12 @@ export default function Home() {
               key={shoe.id}
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
-              <img className="rounded-t-lg" src={shoe.image} alt={shoe.name} />
+              <Image
+                src={shoe.image}
+                alt={shoe.name}
+                width={300}
+                height={300}
+              />
 
               <div className="p-5">
                 <a href="#">

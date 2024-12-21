@@ -1,4 +1,5 @@
 import { fetchData } from "@/app/action/services/productApi";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -55,7 +56,12 @@ export default async function About() {
               key={shoe.id}
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
-              <img className="rounded-t-lg" src={shoe.image} alt={shoe.name} />
+              <Image
+                src={shoe.image}
+                alt={shoe.name}
+                width={300}
+                height={300}
+              />
 
               <div className="p-5">
                 <a href="#">
